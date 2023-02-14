@@ -94,7 +94,7 @@ namespace CadastroPrimoMoveis.Controllers
 
                 return RedirectToAction("Index");
             }
-            TempData["MensagemErro"] = "Ocorreu algum erro no momento da edição;";
+            TempData["MensagemErro"] = "Ocorreu algum erro no momento da edição!";
                 return View(Cliente);
         }
 

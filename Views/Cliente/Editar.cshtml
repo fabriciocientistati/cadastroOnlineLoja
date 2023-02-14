@@ -7,33 +7,72 @@
     <h2>Editar cliente</h2>
     </br>
     <form class="row g-3" method="post" asp-controller="Cliente" asp-action="Editar">
-        <div class="col-md-12">
-            <label for="inputName" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Nome completo" asp-for="Name">
-        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="inputName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Nome completo" asp-for="Name">
+            </div>
 
-        <div class="col-6">
-            <label for="inputCPF" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="inputCPF" placeholder="Apenas números..." asp-for="Cpf">
-        </div>
-        <div class="col-6">
-            <label for="inputCNPJ" class="form-label">CNPJ</label>
-            <input type="text" class="form-control" id="inputCNPJ" placeholder="Apenas números..." asp-for="Cnpj">
-        </div>
+            <div class="col-6">
+                <label for="inputCPF" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="inputCPF" placeholder="Apenas números..." asp-for="Cpf">
+            </div>
+            <div class="col-6">
+                <label for="inputCNPJ" class="form-label">CNPJ</label>
+                <input type="text" class="form-control" id="inputCNPJ" placeholder="Apenas números..." asp-for="Cnpj">
+            </div>
 
-        <div class="col-6">
-            <label for="inputTelefone1" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="inputTelefone1" placeholder="" asp-for="NumTelefone1">
-        </div>
-        <div class="col-6">
-            <label for="inputTelefone2" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="inputTelefone2" placeholder="" asp-for="NumTelefone2">
-        </div>
+            <div class="col-6">
+                <label for="inputTelefone1" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="inputTelefone1" placeholder="" asp-for="NumTelefone1">
+            </div>
+            <div class="col-6">
+                <label for="inputTelefone2" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="inputTelefone2" placeholder="" asp-for="NumTelefone2">
+            </div>
 
-        <div class="col-12">
-            <label for="inputEmail" class="font-weight-bold">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email">
-        </div>
+            <div class="col-12">
+                <label for="inputEmail" class="font-weight-bold">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email">
+            </div>
+
+            </br>
+
+            <!--Endereço-->
+            <div class="container">
+                <div class="col-2">
+                    <label for="inputCEP" cite="form-label">CEP</label>
+                    <input type="search" class="form-control" id="cep" maxlength="8" pattern="[0-9]+$" asp-for="Cep" />
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                </div>
+
+                <div class="col-2">
+                    <label for="inputRua" cite="form-label">Rua</label>
+                    <input type="text" class="form-control" id="rua" readonly="readonly" required="" asp-for="Rua" />
+                </div>
+
+                <div class="col-2">
+                    <label for="inputNumero" cite="form-label">Nº <h11>*</h11></label>
+                    <input type="text" class="form-control" id="numero" required="" asp-for="Numero" />
+                </div>
+
+                <div class="col-2">
+                    <label for="inputBairro" cite="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" readonly="readonly" required="" asp-for="Bairro" />
+                </div>
+
+                <div class="col-2">
+                    <label for="inputCidade" cite="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" readonly="readonly" required="" asp-for="Cidade" />
+                </div>
+
+                <div class="col-2">
+                    <label for="inputEstado" cite="form-label">Estado</label>
+                    <input type="text" class="form-control" id="estado" readonly="readonly" required="" asp-for="Estado" />
+                </div>
+            </div>
 
         <div class="mt-5 text-center">
             <button type="submit" class="btn btn-primary">Editar</button>
