@@ -1,0 +1,44 @@
+﻿@model ClienteModel
+@{
+    ViewData["title"] = "Deletar Cliente";
+}
+
+<div class="container bg-light">
+    <h2>Desejá excluir cliente?</h2>
+    </br>
+    <form class="row g-3" method="post" asp-controller="Cliente" asp-action="Excluir">
+        <div class="col-md-12">
+            <label for="inputName" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nome completo" asp-for="Name" disabled>
+        </div>
+
+        <div class="col-6">
+            <label for="inputCPF" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="inputCPF" placeholder="Apenas números..." asp-for="Cpf" disabled>
+        </div>
+        <div class="col-6">
+            <label for="inputCNPJ" class="form-label">CNPJ</label>
+            <input type="text" class="form-control" id="inputCNPJ" placeholder="Apenas números..." asp-for="Cnpj" disabled>
+        </div>
+
+        <div class="col-6">
+            <label for="inputTelefone1" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="inputTelefone1" placeholder="" asp-for="NumTelefone1" disabled>
+        </div>
+        <div class="col-6">
+            <label for="inputTelefone2" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="inputTelefone2" placeholder="" asp-for="NumTelefone2" disabled>
+        </div>
+
+        <div class="col-12">
+            <label for="inputEmail" class="font-weight-bold">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email"disabled>
+        </div>
+
+        <div class="mt-5  text-center">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            &emsp;
+            <a class="btn btn-primary" asp-controller="Cliente" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>

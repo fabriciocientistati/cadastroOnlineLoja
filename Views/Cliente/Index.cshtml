@@ -1,0 +1,60 @@
+﻿
+@model IEnumerable<ClienteModel> 
+
+@{
+    ViewData["title"] = "Primo Moveis";
+}
+
+<div class="container bg-light">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2>Lista de clientes</h2>
+        <a class="btn btn-success" onclick="Alert" asp-controller="Cliente" asp-action="Cadastrar"><i class="bi bi-file-earmark-plus"></i>Cadastrar novo Cliente</a>
+    </div>
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success text-light" role="alert">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if(TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger text-light" role="alert">
+            @TempData["MensagemErro"]
+        </div>
+    }
+    
+    <table id="Cliente" class="table table-striped table-light table-hover">
+        <br />
+       <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Última atualização</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+            @if(Model != null)
+            {
+                @foreach(var Cliente in Model)
+                { 
+                  <tr>  
+                     <th scope="row">@Cliente.Id</th>  
+                     <td>@Cliente.Name</td>
+                     <td>@Cliente.Cpf</td>
+                     <td>@Cliente.dataUltimaAtualizacao</td>
+                     <td>
+                            <a class="btn btn-primary btn-sm mx-1 " data-toggle="tooltip" data-placement="top" title="Visualizar cadastro" asp-controller="Cliente" asp-action="Detalhes" asp-route-id="@Cliente.Id"><i class="bi bi-eye mx-2"></i>Visualizar</a>
+                            <a class="btn btn-warning btn-sm mx-1" data-toggle="tooltip" data-placement="top" title="Editar cadastro" asp-controller="Cliente" asp-action="Editar" asp-route-id="@Cliente.Id"><i class="bi bi-pencil-square mx-2"></i>Editar</a>
+                            <a class="btn btn-danger btn-sm mx-1" data-toggle="tooltip" data-placement="top" title="Excluir cadastro" asp-controller="Cliente" asp-action="Excluir" asp-route-id="@Cliente.Id"><i class="bi bi-trash3-fill mx-2"></i>Excluir</a>
+                        </td>
+                  </tr>  
+                }
+            }
+        </tbody>
+    </table>
+</div>
