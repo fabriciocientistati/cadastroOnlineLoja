@@ -10511,19 +10511,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\05178722183\\.nuget\\packages\\": {}
+    "C:\\Users\\fabri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repository\\Cadastro_PrimoMoveis\\CadastroOnlinePrimoMoveis\\CadastroPrimoMoveis.csproj",
+      "projectUniqueName": "C:\\Projects\\fabriciocientistati\\cadastroOnlineLoja\\CadastroPrimoMoveis.csproj",
       "projectName": "CadastroPrimoMoveis",
-      "projectPath": "D:\\Repository\\Cadastro_PrimoMoveis\\CadastroOnlinePrimoMoveis\\CadastroPrimoMoveis.csproj",
-      "packagesPath": "C:\\Users\\05178722183\\.nuget\\packages\\",
-      "outputPath": "D:\\Repository\\Cadastro_PrimoMoveis\\CadastroOnlinePrimoMoveis\\obj\\",
+      "projectPath": "C:\\Projects\\fabriciocientistati\\cadastroOnlineLoja\\CadastroPrimoMoveis.csproj",
+      "packagesPath": "C:\\Users\\fabri\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\fabriciocientistati\\cadastroOnlineLoja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\05178722183\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
