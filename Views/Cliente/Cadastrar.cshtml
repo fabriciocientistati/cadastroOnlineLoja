@@ -18,116 +18,126 @@
 
 <br />
 
-<div class="tab-content" id="nav-tabContent">
+<div class="tab-content">
 
     <div class="tab-pane fade show active" id="tabCliente" role="tabpanel" aria-labelledby="tab1-tab">
 
-        <form class="bg-light p-4 rounded shadow-sm">
+        <form class="bg-light p-4 rounded shadow-sm" asp-controller="Cliente" asp-action="Cadastrar">
 
             <h2 class="text-left mb-4">Cadastro de cliente</h2>
 
-            <div class="row g-2">
-                <div class="col-md-12">
+            <div class="input-group">
+                <div class="col-md-10 mb-3">
                     <div>
                         <label for="Nome">Nome</label>
                         <input id="Nome" asp-for="Name" placeholder="Digite o nome..." class="form-control" required="" type="text">
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div>
-                        <label class="form-label" for="Nome">CPF</label>
-                        <input id="cpf" asp-for="Cpf" placeholder="Apenas números..." class="form-control " required="" type="text" maxlength="11" pattern="[0-9]+$">
+                        <label class="form-label" for="cpf">CPF</label>
+                        <input id="cpf" asp-for="Cpf" placeholder="000.000.000-00" class="form-control" required="" type="text" maxlength="11" pattern="[0-9]+$">
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col-md-3 mb-3">
                     <div>
-                        <label class="form-label" for="Nome">CNPJ</label>
-                        <input id="Cnpj" asp-for="Cnpj" placeholder="Apenas números..." class="form-control" type="text" maxlength="11" pattern="[0-9]+$">
+                        <label class="form-label" for="cnpj">CNPJ</label>
+                        <input id="cnpj" asp-for="Cnpj" placeholder="00.000.000/0000-00" class="form-control" type="text" maxlength="11" pattern="[0-9]+$">
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div>
-                        <label class="form-label" for="prependedtext">Telefone</label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input id="prependedtext" asp-for="NumTelefone1" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
-                               OnKeyPress="formatar('## #####-####', this)">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div>
-                        <label class="form-label" for="prependedtext">Telefone</label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input id="prependedtext" asp-for="NumTelefone2" class="form-control" placeholder="XX XXXXX-XXXX" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
-                               OnKeyPress="formatar('## #####-####', this)">
-                    </div>
-                </div>
-
-                <div class="col-md-12">
+                <div class="col-md-10 mb-3">
                     <label class="form-label" for="prependedtext">E-mai</label>
                     <div>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                         <input id="prependedtext" asp-for="Email" class="form-control" placeholder="email@email.com" type="email">
                     </div>
-                    <br /><br /><br />
                 </div>
 
-                <!--Endereço-->
-                <h2 class="text-left mb-4">Endereço</h2>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="CEP">CEP <h11>*</h11></label>
+                <div class="col-md-3">
                     <div>
-                        <input id="cep" asp-for="Cep" placeholder="Apenas números" class="form-control" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
+                        <label class="form-label" for="prependedtext">Telefone</label>
+                        <span class="input-group text"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="prependedtext" asp-for="NumTelefone1" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                               OnKeyPress="formatar('## #####-####', this)">
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col-md-3">
                     <div>
-                        <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                        <label class="form-label" for="prependedtext">Telefone</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="prependedtext" asp-for="NumTelefone2" class="form-control mb-5" placeholder="XX XXXXX-XXXX" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                               OnKeyPress="formatar('## #####-####', this)">
                     </div>
                 </div>
 
-                <div class="col-md-8">
-                    <div>
-                        <label class="form-label">Rua</label>
-                        <input id="rua" asp-for="Rua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                <div class="input-group">
+
+                    <!--Endereço-->
+                    <h2 class="text-left mb-4">Endereço</h2>
+
+                    <div class="input-group flex-nowrap mb-4">
+                        <label class="input-group-text" for="cep">CEP</label>
+                        <div class="col-2">
+                            <input id="cep" asp-for="Cep" placeholder="00000-000" class="form-control" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
+                        </div>
+
+                        &nbsp;&nbsp;
+
+                        <div>
+                            <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                        </div>
                     </div>
+
+                    <div class="input-group flex-nowrap mb-4">
+                        <label class="input-group-text" for="rua">Rua</label>
+                        <div class="col-4">
+                            <input id="rua" asp-for="Rua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label class="input-group-text" for="numero">N°</label>
+                        <div class="col-1">
+                            <input id="numero" asp-for="Numero" class="form-control" placeholder="" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span class="input-group-text" for="bairro">Bairro</span>
+                        <div class="col-2">
+                            <input id="bairro" asp-for="Bairro" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" for="cidade">Cidade</span>
+                        <div class="col-4">
+                            <input id="cidade" asp-for="Cidade" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span class="input-group-text" for="estado">Estado</span>
+                        <div class="col-1">
+                            <input id="estado" asp-for="Estado" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4">
-                    <div>
-                        <laabel class="form-label">Nº <h11>*</h11></laabel>
-                        <input id="numero" asp-for="Numero" class="form-control" placeholder="" type="text">
-                    </div>
-                </div>
-
-                <div class="col-4">
-                    <div>
-                        <label class="form-label">Bairro</label>
-                        <input id="bairro" asp-for="Bairro" class="form-control" placeholder="" required="" readonly="readonly" type="text">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div>
-                        <label class="form-label">Cidade</label>
-                        <input id="cidade" asp-for="Cidade" class="form-control" placeholder="" required="" readonly="readonly" type="text">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div>
-                        <label class="form-label">Estado</label>
-                        <input id="estado" asp-for="Estado" class="form-control" placeholder="" required="" readonly="readonly" type="text">
-                    </div>
-                </div>
             </div>
+
             <br />
-            <div class="col-md-8">
+
+            <div class="col-md-8 mb-3">
                 <button id="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
                 <a class="btn btn-danger" asp-controller="Cliente" asp-action="Index">Cancelar</a>
             </div>

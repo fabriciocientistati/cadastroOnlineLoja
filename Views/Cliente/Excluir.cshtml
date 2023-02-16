@@ -1,44 +1,169 @@
 ﻿@model ClienteModel
 @{
-    ViewData["title"] = "Deletar Cliente";
+    ViewData["title"] = "Excluir Cliente";
 }
 
-<div class="container bg-light">
-    <h2>Desejá excluir cliente?</h2>
-    </br>
-    <form class="row g-3" method="post" asp-controller="Cliente" asp-action="Excluir">
-        <div class="col-md-12">
-            <label for="inputName" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Nome completo" asp-for="Name" disabled>
-        </div>
 
-        <div class="col-6">
-            <label for="inputCPF" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="inputCPF" placeholder="Apenas números..." asp-for="Cpf" disabled>
-        </div>
-        <div class="col-6">
-            <label for="inputCNPJ" class="form-label">CNPJ</label>
-            <input type="text" class="form-control" id="inputCNPJ" placeholder="Apenas números..." asp-for="Cnpj" disabled>
-        </div>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tabCliente" type="button" role="tab" aria-controls="tab1" aria-selected="true">Cliente</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tabOrcamento" type="button" role="tab" aria-controls="tab2" aria-selected="false">Orçamento</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tabPedido" type="button" role="tab" aria-controls="tab3" aria-selected="false">Pedido</button>
+    </li>
+</ul>
 
-        <div class="col-6">
-            <label for="inputTelefone1" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="inputTelefone1" placeholder="" asp-for="NumTelefone1" disabled>
-        </div>
-        <div class="col-6">
-            <label for="inputTelefone2" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="inputTelefone2" placeholder="" asp-for="NumTelefone2" disabled>
-        </div>
+<br />
 
-        <div class="col-12">
-            <label for="inputEmail" class="font-weight-bold">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" asp-for="Email"disabled>
-        </div>
+<div class="tab-content">
 
-        <div class="mt-5  text-center">
-            <button type="submit" class="btn btn-danger">Excluir</button>
-            &emsp;
-            <a class="btn btn-primary" asp-controller="Cliente" asp-action="Index">Voltar</a>
-        </div>
-    </form>
+    <div class="tab-pane fade show active" id="tabCliente" role="tabpanel" aria-labelledby="tab1-tab">
+
+        <form class="bg-light p-4 rounded shadow-sm" asp-controller="Cliente" asp-action="Excluir">
+
+            <h2 class="text-left mb-4">Cadastro de cliente</h2>
+
+            <div class="input-group">
+                <div class="col-md-10 mb-3">
+                    <div>
+                        <label for="Nome">Nome</label>
+                        <input id="Nome" asp-for="Name" class="form-control" required="" type="text">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div>
+                        <label class="form-label" for="cpf">CPF</label>
+                        <input id="cpf" asp-for="Cpf" class="form-control" required="" type="text" maxlength="11" pattern="[0-9]+$">
+                    </div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col-md-3 mb-3">
+                    <div>
+                        <label class="form-label" for="cnpj">CNPJ</label>
+                        <input id="cnpj" asp-for="Cnpj" class="form-control" type="text" maxlength="11" pattern="[0-9]+$">
+                    </div>
+                </div>
+
+                <div class="col-md-10 mb-3">
+                    <label class="form-label" for="prependedtext">E-mai</label>
+                    <div>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input id="prependedtext" asp-for="Email" class="form-control"  type="email">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div>
+                        <label class="form-label" for="prependedtext">Telefone</label>
+                        <span class="input-group text"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="prependedtext" asp-for="NumTelefone1" class="form-control" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                               OnKeyPress="formatar('## #####-####', this)">
+                    </div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col-md-3">
+                    <div>
+                        <label class="form-label" for="prependedtext">Telefone</label>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="prependedtext" asp-for="NumTelefone2" class="form-control mb-5" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                               OnKeyPress="formatar('## #####-####', this)">
+                    </div>
+                </div>
+
+                <div class="input-group">
+
+                    <!--Endereço-->
+                    <h2 class="text-left mb-4">Endereço</h2>
+
+                    <div class="input-group flex-nowrap mb-4">
+                        <label class="input-group-text" for="cep">CEP</label>
+                        <div class="col-2">
+                            <input id="cep" asp-for="Cep" class="form-control" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
+                        </div>
+
+                        &nbsp;&nbsp;
+
+                        <div>
+                            <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-nowrap mb-4">
+                        <label class="input-group-text" for="rua">Rua</label>
+                        <div class="col-4">
+                            <input id="rua" asp-for="Rua" class="form-control" required="" readonly="readonly" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label class="input-group-text" for="numero">N°</label>
+                        <div class="col-1">
+                            <input id="numero" asp-for="Numero" class="form-control" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span class="input-group-text" for="bairro">Bairro</span>
+                        <div class="col-2">
+                            <input id="bairro" asp-for="Bairro" class="form-control" required="" readonly="readonly" type="text">
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" for="cidade">Cidade</span>
+                        <div class="col-4">
+                            <input id="cidade" asp-for="Cidade" class="form-control" required="" readonly="readonly" type="text">
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span class="input-group-text" for="estado">Estado</span>
+                        <div class="col-1">
+                            <input id="estado" asp-for="Estado" class="form-control" required="" readonly="readonly" type="text">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br />
+
+            <div class="col-md-8 mb-3">
+                <button id="Cadastrar" class="btn btn-danger" type="Submit">Excluir</button>
+                <a class="btn btn-primary" asp-controller="Cliente" asp-action="Index">Cancelar</a>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="tab-pane fade" id="tabOrcamento" role="tabpanel" aria-labelledby="tab2-tab">
+        <form class="row">
+            <p>Conteúdo da Tab 2</p>
+        </form>
+    </div>
+
+    <div class="tab-pane fade" id="tabPedido" role="tabpanel" aria-labelledby="tab3-tab">
+        <p>Conteúdo da Tab 3</p>
+    </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
