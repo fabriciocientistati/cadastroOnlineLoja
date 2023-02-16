@@ -17,6 +17,7 @@ namespace CadastroPrimoMoveis.Models
         public string NumTelefone1 { get; set; }
         public string? NumTelefone2 { get; set; }
         public string? Email { get; set; }
+        [Required(ErrorMessage = "Digite o Cep!")]
         public string Cep { get; set; }
         public string Rua { get; set; }
         public string? Numero { get; set; }

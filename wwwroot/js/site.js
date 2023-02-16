@@ -104,3 +104,93 @@ function pesquisacep(valor) {
         limpa_formulario_cep();
     }
 }
+
+//Controle de formatação dos campos
+function mascaraCpf(i) {
+
+    var v = i.value;
+
+    if (isNaN(v[v.length - 1])) { //Não deixa a pessoa incluir letras
+        i.value = v.substring(0, v.length - 1); 
+        return;
+    }
+
+    i.setAttribute("maxlength", "14");
+    if (v.length == 3 || v.length == 7) i.value += ".";
+    if (v.length == 11) i.value += "-";
+
+}
+
+function mascaraCnpj(i) {
+
+    var valor = i.value;
+
+    if (isNaN(valor[valor.length - 1])) { //Não deixa a pessoa incluir letras
+        i.value = valor.substring(0, valor.length - 1);
+        return;
+    }
+
+    i.setAttribute("maxlength", "18");
+    if (valor.length == 2 || valor.length == 6) i.value += ".";
+    if (valor.length == 10) i.value += "/";
+    if (valor.length == 15) i.value += "-"
+}
+
+function mascaraCep(i) {
+
+    var valor = i.value;
+
+    if (isNaN(valor[valor.length - 1])) { //Não deixa a pessoa incluir letras
+        i.value = valor.substring(0, valor.length - 1);
+        return;
+    }
+
+    i.setAttribute("maxlength", "9");
+    if (valor.length == 5) i.value += "-";
+}
+
+//Telefone1
+function mascaraFone1(event) {
+    var valor = document.getElementById("telefone1").attributes[0].ownerElement['value'];
+    var retorno = valor.replace(/\D/g, "");
+    retorno = retorno.replace(/^0/, "");
+    if (retorno.length > 10) {
+        retorno = retorno.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (retorno.length > 5) {
+        if (retorno.length == 6 && event.code == "Backspace") {
+            // necessário pois senão o "-" fica sempre voltando ao dar backspace
+            return;
+        }
+        retorno = retorno.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (retorno.length > 2) {
+        retorno = retorno.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        if (retorno.length != 0) {
+            retorno = retorno.replace(/^(\d*)/, "($1");
+        }
+    }
+    document.getElementById("telefone1").attributes[0].ownerElement['value'] = retorno;
+}
+
+//Telefone 2
+function mascaraFone2(event) {
+    var valor = document.getElementById("telefone2").attributes[0].ownerElement['value'];
+    var retorno = valor.replace(/\D/g, "");
+    retorno = retorno.replace(/^0/, "");
+    if (retorno.length > 10) {
+        retorno = retorno.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (retorno.length > 5) {
+        if (retorno.length == 6 && event.code == "Backspace") {
+            // necessário pois senão o "-" fica sempre voltando ao dar backspace
+            return;
+        }
+        retorno = retorno.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (retorno.length > 2) {
+        retorno = retorno.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        if (retorno.length != 0) {
+            retorno = retorno.replace(/^(\d*)/, "($1");
+        }
+    }
+    document.getElementById("telefone2").attributes[0].ownerElement['value'] = retorno;
+}
