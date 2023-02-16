@@ -1,5 +1,4 @@
 ﻿
-//As propriedades e atributos que inserir nessa ClasseModel, ela irá referênciar as colunas no banco de dados
 using System.ComponentModel.DataAnnotations;
 namespace CadastroPrimoMoveis.Models
 {

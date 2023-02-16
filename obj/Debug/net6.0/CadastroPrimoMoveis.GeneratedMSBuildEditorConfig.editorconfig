@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CadastroPrimoMoveis
 build_property.RootNamespace = CadastroPrimoMoveis
-build_property.ProjectDir = C:\Projects\fabriciocientistati\cadastroOnlineLoja\
+build_property.ProjectDir = D:\Repository\Projects\cadastroOnlineLoja\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Projects\fabriciocientistati\cadastroOnlineLoja
+build_property.MSBuildProjectDirectory = D:\Repository\Projects\cadastroOnlineLoja
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Cliente/Cadastrar.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Cliente/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Cliente/Detalhes.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Cliente/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhbGhlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Cliente/Editar.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Cliente/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Cliente/Excluir.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Cliente/Excluir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFeGNsdWlyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Cliente/Index.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Home/Index.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Shared/Error.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Usuario/Cadastrar.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Usuario/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Usuario/Index.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/_ViewImports.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/_ViewStart.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/fabriciocientistati/cadastroOnlineLoja/Views/Shared/_Layout.cshtml]
+[D:/Repository/Projects/cadastroOnlineLoja/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hpt1wb9gqb
